@@ -49,7 +49,23 @@ snmp_02)iana
         fi
         ;;
 snmp_03)iana
-        snmp=$(snmpget -Oqn -v3 -u "$2" -n "" -x DES -X "$4" -l authPriv -a MD5 -A "$5" $3 sysObjectID.0)
+        snmp=$(snmpget -Oqn -v3 -u "$2" -n "" -l noAuthNoPriv "$3" sysObjectID.0)
+        if [ $? -eq 0 ]
+        then
+        oid=$(echo $snmp | cut -d ' ' -f2 | cut -d'.' -f8)
+        sed -n "/^$oid$/{n;p;}" iana.txt | tr -s ' ' | cut -d' ' -f2
+        fi
+        ;;
+snmp_04)iana
+        snmp=$(snmpget -Oqn -v3 -u "$2" -n "" -l authNoPriv -a "$4" -A "$5" "$3" sysObjectID.0)
+        if [ $? -eq 0 ]
+        then
+        oid=$(echo $snmp | cut -d ' ' -f2 | cut -d'.' -f8)
+        sed -n "/^$oid$/{n;p;}" iana.txt | tr -s ' ' | cut -d' ' -f2
+        fi
+        ;;
+snmp_05)iana
+        snmp=$(snmpget -Oqn -v3 -u "$2" -n "" -x "$6" -X "$7" -l authPriv -a "$4" -A "$5" "$3" sysObjectID.0)
         if [ $? -eq 0 ]
         then
         oid=$(echo $snmp | cut -d ' ' -f2 | cut -d'.' -f8)
