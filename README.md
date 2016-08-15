@@ -8,8 +8,12 @@ Você pode utilizar os mesmos comandos que executa para coletar dados de seus eq
 
 <p><b>Exemplo de consulta SNMP v1:</b></p>
 <p># snmpget -Oqn -v1 -c public 192.0.2.1 sysObjectID.0</p>
+<p><b>Exemplo de consulta com show_manufacturer SNMP v1:</b></p>
+<p># ./show_manufacturer.sh snmp_01 public 192.0.2.1</p>
 <p><b>Exemplo de consulta SNMP v2c:</b></p>
 <p># snmpget -Oqn -v2c -c public 192.0.2.1 sysObjectID.0</p>
+<p><b>Exemplo de consulta com show_manufacturer SNMP v2c:</b></p>
+<p># ./show_manufacturer.sh snmp_02 public 192.0.2.1</p>
 <p><b>Exemplo de SNMP v3 noAuthNoPriv</b></p>
 <p># snmpget -Oqn -v3 -u noAuthUser -n "" -l noAuthNoPriv 192.0.2.1 sysObjectID.0</p>
 <p><b>Exemplo de SNMP v3 com AuthNoPriv</b></p>
