@@ -10,5 +10,9 @@ Você pode utilizar os mesmos comandos que executa para coletar dados de seus eq
 <p># snmpget -Oqn -v1 -c public 192.0.2.1 sysObjectID.0</p>
 <p><b>Exemplo de consulta SNMP v2c:</b></p>
 <p># snmpget -Oqn -v2c -c public 192.0.2.1 sysObjectID.0</p>
-<p><b>Exemplo de SNMP v3 com AuthPriv</b></p>
+<p><b>Exemplo de SNMP v3 noAuthNoPriv</b></p>
+<p># snmpget -Oqn -v3 -u noAuthUser -n "" -l noAuthNoPriv 192.0.2.1 sysObjectID.0</p>
+<p><b>Exemplo de SNMP v3 com AuthNoPriv</b></p>
+<p># snmpget -Oqn -v3 -u initial -n "" -l authNoPriv -a MD5 -A 'setup_passphrase' 192.0.2.1 sysObjectID.0</p>
+<p><b>Exemplo de SNMP v3 com authPriv</b></p>
 <p># snmpget -Oqn -v3 -u initial -n "" -x DES -X 'setup_passkey' -l authPriv -a MD5 -A 'setup_passphrase' 192.0.2.1 sysObjectID.0</p>
