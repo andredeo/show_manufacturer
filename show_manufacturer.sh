@@ -41,7 +41,7 @@ snmp_01)iana
         fi
         ;;
 snmp_02)iana
-        snmp=$(snmpget -Oqn -v1 -c "$2" "$3" sysObjectID.0)
+        snmp=$(snmpget -Oqn -v2c -c "$2" "$3" sysObjectID.0)
         if [ $? -eq 0 ]
         then
         oid=$(echo $snmp | cut -d ' ' -f2 | cut -d'.' -f8)
