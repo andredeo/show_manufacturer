@@ -43,7 +43,7 @@ fi
 oid ()
 {
 oid=$(echo $snmp | cut -d ' ' -f2 | cut -d'.' -f8)
-sed -n "/^$oid$/{n;p;}" $scrip_path/iana.txt | tr -s ' ' | cut -d' ' -f2
+sed -n "/^$oid$/{n;p;}" $scrip_path/iana.txt | tr -s ' ' | cut -d' ' -f2-
 }
 
 ####################################
