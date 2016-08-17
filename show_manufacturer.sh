@@ -44,7 +44,6 @@ oid ()
 {
 oid=$(echo $snmp | cut -d ' ' -f2 | cut -d'.' -f8)
 sed -n "/^$oid$/{n;p;}" iana.txt | tr -s ' ' | cut -d' ' -f2
-fi
 }
 
 ####################################
