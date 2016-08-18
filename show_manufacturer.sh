@@ -98,7 +98,7 @@ snmp_03)iana
         fi
         ;;
 snmp_04)iana
-        snmp=$(snmpget -Oqn -v3 -u "$2" -n "" -l authNoPriv -a "$4" -A "$5" "$3" sysObjectID.0)
+        snmp=$(snmpget -Oqn -v3 -u "$2" -n "" -l authNoPriv -a "$5" -A "$6" "$3" sysObjectID.0)
         if [ $? -eq 0 ]
         then
         oid
@@ -106,7 +106,7 @@ snmp_04)iana
         fi
         ;;
 snmp_05)iana
-        snmp=$(snmpget -Oqn -v3 -u "$2" -n "" -x "$6" -X "$7" -l authPriv -a "$4" -A "$5" "$3" sysObjectID.0)
+        snmp=$(snmpget -Oqn -v3 -u "$2" -n "" -x "$7" -X "$8" -l authPriv -a "$5" -A "$6" "$3" sysObjectID.0)
         if [ $? -eq 0 ]
         then
         oid
