@@ -4,10 +4,18 @@
 # DEFINICAO DE VARIAVEIS #
 ##########################
 
-# Coloque aqui o caminho onde o script sera armazenado
+# Informe aqui o caminho onde o script sera armazenado
 # O arquivo com as definicoes da IANA sera armazenado no mesmo local
-
 scrip_path=/Scripts/Scripts_Zabbix
+
+# Informe aqui o caminho do arquivo de configuracao do Agente Zabbix
+zabbix_conf=/usr/local/etc/zabbix_agentd.conf
+
+# Informe aqui o nome da chave criada no Zabbix
+zabbix_key=show_manufacturer
+
+# ARmazena o nome do host, sera utilizado na funcao sender
+host="$4"
 
 ########################
 # DEFINICAO DE FUNCOES #
@@ -44,11 +52,18 @@ oid ()
 {
 oid=$(echo $snmp | cut -d ' ' -f2 | cut -d'.' -f8)
 resultado=$(sed -n "/^$oid$/{n;p;}" $scrip_path/iana.txt | tr -s ' ' | cut -d' ' -f2-)
+}
+
+# Funcao "sender"
+# Envia os dados para o equipamento atraves do zabbix_sender
+
+sender ()
+{
 if [ -z "$resultado" ]
 then
-        echo "Fabricante nao encontrado"
+        zabbix_sender -s "$host" -k "$zabbix_key" -o "Fabricante nao encontrado" -r -c "$zabbix_conf" >> /dev/null
 else
-        echo $resultado
+        zabbix_sender -s "$host" -k "$zabbix_key" -o "$resultado" -r -c "$zabbix_conf" >> /dev/null
 fi
 }
 
@@ -62,6 +77,7 @@ snmp_01)iana
         if [ $? -eq 0 ]
         then
         oid
+        sender
         fi
         ;;
 
@@ -70,6 +86,7 @@ snmp_02)iana
         if [ $? -eq 0 ]
         then
         oid
+        sender
         fi
         ;;
 snmp_03)iana
@@ -77,6 +94,7 @@ snmp_03)iana
         if [ $? -eq 0 ]
         then
         oid
+        sender
         fi
         ;;
 snmp_04)iana
@@ -84,6 +102,7 @@ snmp_04)iana
         if [ $? -eq 0 ]
         then
         oid
+        sender
         fi
         ;;
 snmp_05)iana
@@ -91,11 +110,12 @@ snmp_05)iana
         if [ $? -eq 0 ]
         then
         oid
+        sender
         fi
         ;;
-*) echo "Uso: ./$0 snmp_01 \"comunidade\" \"IP\" - Para SNMP v1
-Uso: ./$0 snmp_02 \"comunidade\" \"IP\" - Para SNMP v2c
-Uso: ./$0 snmp_03 \"usuario\" \"IP\" - Para SNMP v3 noAuthNoPriv
-Uso: ./$0 snmp_04 \"usuario\" \"IP\" \"tipo de hash\" \"<senha do hash>\" - Para SNMP v3 authNoPriv
-Uso: ./$0 snmp_05 \"usuario\" \"IP\" \"tipo de hash\" \"<senha do hash>\" \"tipo de criptografia\" \"<senha da chave>\" - Para SNMP v3 authPriv"
+*) echo "Uso: ./$0 snmp_01 \"comunidade\" \"IP\" \"Nome do Host no Zabbix\" - Para SNMP v1
+Uso: ./$0 snmp_02 \"comunidade\" \"IP\" \"Nome do Host no Zabbix\" - Para SNMP v2c
+Uso: ./$0 snmp_03 \"usuario\" \"IP\" \"Nome do Host no Zabbix\" - Para SNMP v3 noAuthNoPriv
+Uso: ./$0 snmp_04 \"usuario\" \"IP\" \"tipo de hash\" \"<senha do hash>\" \"Nome do Host no Zabbix\" - Para SNMP v3 authNoPriv
+Uso: ./$0 snmp_05 \"usuario\" \"IP\" \"tipo de hash\" \"<senha do hash>\" \"tipo de criptografia\" \"<senha da chave>\" \"Nome do Host no Zabbix\" - Para SNMP v3 authPriv"
 esac
