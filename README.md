@@ -67,7 +67,7 @@ O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas a
 <p>Primeiramente vamos criar a entrada no crontab:</p>
 <p><i># crontab -e</i></p>
 <p><i># Atualiza a lista de fabricantes</i></p>
-<p><i>20      15      *       *       *       /usr/local/etc/zabbix/externalscripts/show_manufacturer.sh iana</i></p>
+<p><i>20      15      *       *       *       /usr/local/etc/zabbix/externalscripts/show_manufacturer.sh atualiza</i></p>
 <p><i># Atualiza os dados do ativo</i></p>
 <p><i>25      15      *       *       *       /usr/local/etc/zabbix/externalscripts/show_manufacturer.sh snmp_05 initial 192.168.100.1 "Switch D-Link 3120.01" md5 'T&4j@1Lx' des 'Gq7@Z7&y'</i></p>
 <p>Podemos observar que o ativo recebeu os dados.</p>
