@@ -6,7 +6,7 @@
 
 # Informe aqui o caminho onde o script sera armazenado
 # O arquivo com as definicoes da IANA sera armazenado no mesmo local
-scrip_path=/Scripts/Scripts_Zabbix
+script_path=/Scripts/Scripts_Zabbix
 
 # Informe aqui o caminho do arquivo de configuracao do Agente Zabbix
 zabbix_conf=/usr/local/etc/zabbix_agentd.conf
@@ -27,17 +27,17 @@ host="$4"
 
 iana ()
 {
-if [ ! -s $scrip_path/iana.txt ]
+if [ ! -s $script_path/iana.txt ]
 then
         echo "Baixando lista de OIDs Enterprise da IANA, aguarde por favor ..."
-        curl -s http://www.iana.org/assignments/enterprise-numbers/enterprise-numbers > $scrip_path/iana.txt
+        curl -s http://www.iana.org/assignments/enterprise-numbers/enterprise-numbers > $script_path/iana.txt
         echo " "
         echo "Processo finalizado"
 else
-        if [ `grep 'last updated' $scrip_path/iana.txt | cut -d" " -f3 | cut -d')' -f1` != `curl -s http://www.iana.org/assignments/enterprise-numbers/enterprise-numbers | head -3 | tail -1 | cut -d" " -f3 | cut -d')' -f1` ]
+        if [ `grep 'last updated' $script_path/iana.txt | cut -d" " -f3 | cut -d')' -f1` != `curl -s http://www.iana.org/assignments/enterprise-numbers/enterprise-numbers | head -3 | tail -1 | cut -d" " -f3 | cut -d')' -f1` ]
         then
                 echo "Atualizando lista de OIDs Enterprise da IANA, aguarde por favor ..."
-                curl -s http://www.iana.org/assignments/enterprise-numbers/enterprise-numbers > $scrip_path/iana.txt
+                curl -s http://www.iana.org/assignments/enterprise-numbers/enterprise-numbers > $script_path/iana.txt
                 echo " "
                 echo "Processo finalizado"
         fi
@@ -51,7 +51,7 @@ fi
 oid ()
 {
 oid=$(echo $snmp | cut -d ' ' -f2 | cut -d'.' -f8)
-resultado=$(sed -n "/^$oid$/{n;p;}" $scrip_path/iana.txt | tr -s ' ' | cut -d' ' -f2-)
+resultado=$(sed -n "/^$oid$/{n;p;}" $script_path/iana.txt | tr -s ' ' | cut -d' ' -f2-)
 }
 
 # Funcao "sender"
