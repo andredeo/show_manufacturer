@@ -51,8 +51,8 @@ O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas a
 <body style="background-color:Gainsboro;">
 # tail -1 /usr/local/etc/zabbix_agentd.conf
 UserParameter=show_manufacturer[*],/usr/local/etc/zabbix/externalscripts/show_manufacturer.sh $1 $2 $3 $4 $5 $6 $7 $8 $9
-</p>
 </body> 
+</p>
 </p>
 <h4>Item para atualizar a lista de fabricantes</h4>
 <p>Item criado no <b>Zabbix Server</b>, observe o detalhe do agendamento do horário.</p>
