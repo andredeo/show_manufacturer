@@ -57,7 +57,7 @@ O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas a
 <p>Item criado no <b>Zabbix Server</b>, observe o detalhe do agendamento do horário.</p>
 <img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_02.png" border="0" height="200" width="296">
 <p>Nestes dois itens eu não preciso atualizar a informação e nem armazená-la.</p>
-<h3>Criar o item no Ativo</h3>
+<h4>Criar o item no Ativo</h4>
 <h4>Item para receber o dado enviado</h4>
 <p>Item criado no <b>ativo</b>, observe que o meu ativo não possui uma interface do tipo Agente Zabbix, e mesmo assim eu posso criar um item do tipo <b>Zabbix trapper</b>.</p>
 <img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_03.png" border="0" height="200" width="296">
