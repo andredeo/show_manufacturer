@@ -61,9 +61,9 @@ sender ()
 {
 if [ -z "$resultado" ]
 then
-        zabbix_sender -s "$host" -k "$zabbix_key" -o "Fabricante nao encontrado" -r -c "$zabbix_conf" >> /dev/null
+        zabbix_sender -s "$host" -k "$zabbix_key" -o "Fabricante nao encontrado" -c "$zabbix_conf" >> /dev/null
 else
-        zabbix_sender -s "$host" -k "$zabbix_key" -o "$resultado" -r -c "$zabbix_conf" >> /dev/null
+        zabbix_sender -s "$host" -k "$zabbix_key" -o "$resultado" -c "$zabbix_conf" >> /dev/null
 fi
 }
 
