@@ -47,7 +47,7 @@ O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas a
 <h3>Criar o item no Zabbix Server</h3>
 <p>A idéia é criar um item no Zabbix Server com horário agendado (Zabbix 3.x) que vai executar o script e alimentar o item do ativo. Na realidade criaremos um item para atualizar diariamente a lista de fabricantes e outro que vai alimentar o item no ativo.</p>
 <p>Primeiramente vamos criar o UserParameter no zabbix_agentd.conf:</p>
-<p><i># vi /usr/local/etc/zabbix_agentd.conf</i></p>
+<p><b><i># vi /usr/local/etc/zabbix_agentd.conf</i></b></p>
 <p><i>UserParameter=show_manufacturer[*],/usr/local/etc/zabbix/externalscripts/show_manufacturer.sh $1 $2 $3 $4 $5 $6 $7 $8 $9 </i></p>
 </p>
 <h4>Item para atualizar a lista de fabricantes</h4>
@@ -65,7 +65,7 @@ O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas a
 <img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_04.png" border="0" height="200" width="296">
 <h3>Uso do Script via Crontab</h3>
 <p>Primeiramente vamos criar a entrada no crontab:</p>
-<p><i># crontab -e</i></p>
+<p><b><i># crontab -e</i></b></p>
 <p><i># Atualiza a lista de fabricantes</i></p>
 <p><i>20      15      *       *       *       /usr/local/etc/zabbix/externalscripts/show_manufacturer.sh atualiza</i></p>
 <p><i># Atualiza os dados do ativo</i></p>
