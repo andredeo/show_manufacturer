@@ -72,6 +72,8 @@ fi
 ####################################
 
 case $1 in
+atualiza)iana
+        ;;
 snmp_01)iana
         snmp=$(snmpget -Oqn -v1 -c "$2" "$3" sysObjectID.0)
         if [ $? -eq 0 ]
@@ -113,7 +115,9 @@ snmp_05)iana
         sender
         fi
         ;;
-*) echo "Uso: $0 snmp_01 \"comunidade\" \"IP\" \"Nome do Host no Zabbix\" - Para SNMP v1
+*) echo "
+Uso: $0 atualiza - Para criar/atualizar a lista de fabricantes
+Uso: $0 snmp_01 \"comunidade\" \"IP\" \"Nome do Host no Zabbix\" - Para SNMP v1
 Uso: $0 snmp_02 \"comunidade\" \"IP\" \"Nome do Host no Zabbix\" - Para SNMP v2c
 Uso: $0 snmp_03 \"usuario\" \"IP\" \"Nome do Host no Zabbix\" - Para SNMP v3 noAuthNoPriv
 Uso: $0 snmp_04 \"usuario\" \"IP\" \"Nome do Host no Zabbix\" \"tipo de hash\" \"<senha do hash>\" - Para SNMP v3 authNoPriv
