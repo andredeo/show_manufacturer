@@ -48,7 +48,15 @@ O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas a
 <p>A idéia é criar um item no Zabbix Server com horário agendado (Zabbix 3.x) que vai executar o script e alimentar o item do ativo. Na realidade criaremos um item para atualizar diariamente a lista de fabricantes e outro que vai alimentar o item no ativo.</p>
 </p>
 <h4>Item para atualizar a lista de fabricantes</h4>
-<a><img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_01.png"</img></a>
-<h4>Item para atualizar a lista de fabricantes</h4>
+<p>Item criado no <b>Zabbix Server</b>, observe o detalhe do agendamento do horário.</p>
 <img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_01.png" border="0" height="200" width="296">
-
+<h4>Item para executar o script e enviar o dado para o ativo</h4>
+<p>Item criado no <b>Zabbix Server</b>, observe o detalhe do agendamento do horário.</p>
+<img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_02.png" border="0" height="200" width="296">
+<p>Nestes dois itens eu não preciso atualizar a informação e nem armazená-la.</p>
+<h4>Item para receber o dado enviado</h4>
+<p>Item criado no <b>ativo</b>, observe que o meu ativo não possui uma interface do tipo Agente Zabbix, e mesmo assim eu posso criar um item do tipo <b>Zabbix trapper</b>.</p>
+<img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_03.png" border="0" height="200" width="296">
+<h4>Dados recebidos</h4>
+<p>Podemos observar que o ativo recebeu os dados.</p>
+<img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_04.png" border="0" height="200" width="296">
