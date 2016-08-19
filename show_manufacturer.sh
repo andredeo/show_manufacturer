@@ -116,6 +116,6 @@ snmp_05)iana
 *) echo "Uso: ./$0 snmp_01 \"comunidade\" \"IP\" \"Nome do Host no Zabbix\" - Para SNMP v1
 Uso: ./$0 snmp_02 \"comunidade\" \"IP\" \"Nome do Host no Zabbix\" - Para SNMP v2c
 Uso: ./$0 snmp_03 \"usuario\" \"IP\" \"Nome do Host no Zabbix\" - Para SNMP v3 noAuthNoPriv
-Uso: ./$0 snmp_04 \"usuario\" \"IP\" \"tipo de hash\" \"<senha do hash>\" \"Nome do Host no Zabbix\" - Para SNMP v3 authNoPriv
-Uso: ./$0 snmp_05 \"usuario\" \"IP\" \"tipo de hash\" \"<senha do hash>\" \"tipo de criptografia\" \"<senha da chave>\" \"Nome do Host no Zabbix\" - Para SNMP v3 authPriv"
+Uso: ./$0 snmp_04 \"usuario\" \"IP\" \"Nome do Host no Zabbix\" \"tipo de hash\" \"<senha do hash>\" - Para SNMP v3 authNoPriv
+Uso: ./$0 snmp_05 \"usuario\" \"IP\" \"Nome do Host no Zabbix\" \"tipo de hash\" \"<senha do hash>\" \"tipo de criptografia\" \"<senha da chave>\" - Para SNMP v3 authPriv"
 esac
