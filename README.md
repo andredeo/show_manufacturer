@@ -31,7 +31,6 @@ Você pode utilizar os mesmos comandos que executa para coletar dados de seus eq
 <p>
 O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas as parametrizações se dão por meio de passagem de parâmetros, mas alguns detalhes precisam ser observados. Esses detalhes são tratados nas próximas seções.
 </p>
-<br>
 <h3>Uso de Nomes de Comunidades (SNMP v2c) e Nomes/Senhas de Usuários (SNMP v3)</h3>
 <p>O Zabbix não aceita os seguintes caracteres especiais nas chaves:</p>
 <p><b>\, ', ", `, *, ?, [, ], {, }, ~, $, !, &, ;, (, ), <, >, |, #, @, 0x0a</b></p>
@@ -41,13 +40,10 @@ O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas a
 	<li>Agendando o script para ser executado via crontab;</li>
 	<li>Alterando o script e deixando o nome da comunidade ou o nome/senha dos seus usuários "hard coded".</li>
 </ul> 
-<br>
 <h3>Uso de Macros</h3>
 <p>Como dito acima o Zabbix não aceita caracteres especiais nas chaves, logo não podemos usar macros nas chaves.</p>
-<br>
 <h3>Uso do Script em Ativos de Rede</h3>
 <p>É óvio que não podemos executar um Shell Script em um ativo de rede como um Switch, No-Break, etc. A solução nesse caso é criar o item no Zabbix Server ou agendar a execução do script via crontab.</p>
-<br>
 <h3>Criar o item no Zabbix Server</h3>
 <p>A idéia é criar um item no Zabbix Server com horário agendado (Zabbix 3.x) que vai executar o script e alimentar o item do ativo. Na realidade criaremos um item para atualizar diariamente a lista de fabricantes e outro que vai alimentar o item no ativo.</p>
 </p>
