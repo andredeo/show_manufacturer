@@ -57,9 +57,19 @@ O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas a
 <p>Item criado no <b>Zabbix Server</b>, observe o detalhe do agendamento do horário.</p>
 <img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_02.png" border="0" height="200" width="296">
 <p>Nestes dois itens eu não preciso atualizar a informação e nem armazená-la.</p>
+<h3>Criar o item no Ativo</h3>
 <h4>Item para receber o dado enviado</h4>
 <p>Item criado no <b>ativo</b>, observe que o meu ativo não possui uma interface do tipo Agente Zabbix, e mesmo assim eu posso criar um item do tipo <b>Zabbix trapper</b>.</p>
 <img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_03.png" border="0" height="200" width="296">
 <h4>Dados recebidos</h4>
 <p>Podemos observar que o ativo recebeu os dados.</p>
 <img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_04.png" border="0" height="200" width="296">
+<h3>Uso do Script via Crontab</h3>
+<p>Primeiramente vamos criar a entrada no crontab:</p>
+<p><i># crontab -e</i></p>
+<p><i># Atualiza a lista de fabricantes</i></p>
+<p><i>20      15      *       *       *       /usr/local/etc/zabbix/externalscripts/show_manufacturer.sh iana</i></p>
+<p><i># Atualiza os dados do ativo</i></p>
+<p><i>25      15      *       *       *       /usr/local/etc/zabbix/externalscripts/show_manufacturer.sh snmp_05 initial 192.168.100.1 "Switch D-Link 3120.01" md5 'T&4j@1Lx' des 'Gq7@Z7&y'</i></p>
+<p>Podemos observar que o ativo recebeu os dados.</p>
+<img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_05.png" border="0" height="200" width="296">
