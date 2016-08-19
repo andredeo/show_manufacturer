@@ -43,7 +43,7 @@ O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas a
 <h3>Uso de Macros</h3>
 <p>Como dito acima o Zabbix não aceita caracteres especiais nas chaves, logo não podemos usar macros nas chaves.</p>
 <h3>Uso do Script em Ativos de Rede</h3>
-<p>É óvio que não podemos executar um Shell Script em um ativo de rede como um Switch, No-Break, etc. A solução nesse caso é criar o item no Zabbix Server ou agendar a execução do script via crontab.</p>
+<p>É óbvio que não podemos executar um Shell Script em um ativo de rede como um Switch, No-Break, etc. A solução nesse caso é criar o item no Zabbix Server ou agendar a execução do script via crontab.</p>
 <h3>Criar o item no Zabbix Server</h3>
 <p>A idéia é criar um item no Zabbix Server com horário agendado (Zabbix 3.x) que vai executar o script e alimentar o item do ativo. Na realidade criaremos um item para atualizar diariamente a lista de fabricantes e outro que vai alimentar o item no ativo.</p>
 <p>Primeiramente vamos criar o UserParameter no zabbix_agentd.conf:</p>
