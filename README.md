@@ -32,7 +32,7 @@ Você pode utilizar os mesmos comandos que executa para coletar dados de seus eq
 <p># ./show_manufacturer.sh snmp_05 initial 192.0.2.1 MD5 'setup_passphrase' DES 'setup_passkey'</p>
 <h1>Uso no Zabbix</h1>
 <p>
-O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas as parametrizações se dão por meio de passagem de parâmentros, mas alguns detalhes precisam ser observados. Esses detalhes são tratados nas próximas seções.
+O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas as parametrizações se dão por meio de passagem de parâmetros, mas alguns detalhes precisam ser observados. Esses detalhes são tratados nas próximas seções.
 </p>
 <br>
 <h3>Uso de Nomes de Comunidades (SNMP v2c) e Nomes/Senhas de Usuários (SNMP v3)</h3>
