@@ -14,7 +14,7 @@ zabbix_conf=/usr/local/etc/zabbix_agentd.conf
 # Informe aqui o nome da chave criada no Zabbix
 zabbix_key=show_manufacturer
 
-# ARmazena o nome do host, sera utilizado na funcao sender
+# Armazena o nome do host, sera utilizado na funcao sender
 host="$4"
 
 ########################
