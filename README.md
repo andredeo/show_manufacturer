@@ -49,3 +49,6 @@ O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas a
 </p>
 <h4>Item para atualizar a lista de fabricantes</h4>
 <a><img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_01.png"</img></a>
+<h4>Item para atualizar a lista de fabricantes</h4>
+<img src="https://raw.githubusercontent.com/andredeo/show_manufacturer/master/show_manufacturer_01.png" border="0" height="200" width="296"
+
