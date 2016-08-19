@@ -3,7 +3,7 @@
 <h3>Script em Shell para descobrir qual é o fabricante do equipamento via consulta SNMP, de acordo com o objeto sysObjectID.0</h3>
 
 <p>
-Você pode utilizar os mesmos comandos que executa para coletar dados de seus equipamentos com as respectivas comunidades (SNMP v1/v2c) ou usuario/senha (SNMP v3). Quando transportar os comandos para o Script siga essa sequencia: a comunidade/usuario, o IP, o tipo de hash (MD5|SHA), a senha do hash (autenticação), o tipo de criptografia (AES|DES) e a senha da chave (criptografia).
+Você pode utilizar os mesmos comandos que executa para coletar dados de seus equipamentos com as respectivas comunidades (SNMP v1/v2c) ou usuario/senha (SNMP v3). Quando transportar os comandos para o Script siga essa sequencia: a comunidade/usuario, o IP, o nome do host no Zabbix, o tipo de hash (MD5|SHA), a senha do hash (autenticação), o tipo de criptografia (AES|DES) e a senha da chave (criptografia).
 </p>
 <br>
 <p><b>Exemplo de consulta SNMP v1:</b></p>
