@@ -38,7 +38,7 @@ O script foi concebido com o objetivo de utilizá-lo no Zabbix, por isso todas a
 <ul>
 	<li>Não utilizando esses caracteres;</li>
 	<li>Agendando o script para ser executado via crontab;</li>
-	<li>Alterando o script e deixando o nome da comunidade ou o nome/senha dos seus usuários "hard coded".</li>
+	<li>Alterando o script e deixando o nome da comunidade ou o nome/senha dos seus usuários "hard coded" - <b>Não recomendado</b>.</li>
 </ul> 
 <h3>Uso de Macros</h3>
 <p>Como dito acima o Zabbix não aceita caracteres especiais nas chaves, logo não podemos usar macros nas chaves.</p>
